@@ -1,0 +1,18 @@
+.wrapper
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr; /*temaplte for columns*/
+	grid-auto-rows: 100px;
+}
+
+.A
+{
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+.D
+{
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
