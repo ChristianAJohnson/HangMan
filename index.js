@@ -1,7 +1,8 @@
 
 var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var guessText = document.createElement("div")
-var wrapper = document.getElementsByClassName('wrapper')[0];
+// var wrapper = document.getElementsByClassName('wrapper')[0];
+var wrapper = document.createElement('div') // this creates a wrapper
 var A = document.getElementsByClassName("A")[0];
 var B = document.getElementsByClassName("B")[0];
 
@@ -15,19 +16,19 @@ function createletterboxes(word,hintphrase)
 	word2 = word2.split(""); // splits up string into an array
 
 
-	// var wrapper = document.createElement('div') // this creates a wrapper
+	
 	// var wrapper = document.getElementsByClassName('wrapper')[0]; // this creates a wrapper
 	wrapper.style.width = "90%";
 	wrapper.style.margin = '0 auto'
 	wrapper.style.border = '2px solid green'
 	document.body.appendChild(wrapper)
 
-	 	// var hintText = document.createElement("div") // this box holds the hint phrase for the word
-	    // hintText.style.width = "auto"
-	    A.style.border = "2px solid blue"
-	    // hintText.className = "hintText"
-	    A.innerHTML = hintphrase
-		// wrapper.appendChild(hintText)
+	 	var hintText = document.createElement("div") // this box holds the hint phrase for the word
+	    hintText.style.width = "auto"
+	    hintText.style.border = "2px solid blue"
+	    hintText.className = "hintText"
+	    hintText.innerHTML = hintphrase
+		wrapper.appendChild(hintText)
 
 	    createGuessWord(guessWord)
 
