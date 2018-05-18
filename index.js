@@ -72,6 +72,7 @@ function createletterboxes(word,hintphrase)
 
 }
 
+ createletterboxes("paparazzi","people who take photos of celebrities for money")
 
 function createGuessWord(guessWord3)
 {
