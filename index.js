@@ -1,6 +1,7 @@
 
 var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var guessText = document.createElement("div")
+var countText = document.createElement("div")
 // var wrapper = document.getElementsByClassName('wrapper')[0];
 var wrapper = document.createElement('div') // this creates a wrapper
 var A = document.getElementsByClassName("A")[0];
@@ -15,8 +16,6 @@ function createletterboxes(word,hintphrase)
 
 	word2 = word2.split(""); // splits up string into an array
 
-
-	
 	// var wrapper = document.getElementsByClassName('wrapper')[0]; // this creates a wrapper
 	wrapper.style.width = "90%";
 	wrapper.style.margin = '0 auto'
@@ -81,6 +80,12 @@ function createGuessWord(guessWord3)
 	guessText.className = "guessText"
 	guessText.innerHTML = guessWord3
 	wrapper.appendChild(guessText)
+
+	countText.style.width = "auto"
+	countText.style.border = "2px solid orange"
+	countText.className = "countText"
+	countText.innerHTML = "How many guesses do you have left ?"
+	wrapper.appendChild(countText)
 }
 
 
