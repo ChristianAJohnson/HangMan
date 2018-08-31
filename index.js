@@ -31,6 +31,9 @@ function createletterboxes(word,hintphrase)
 
 	    createGuessWord(guessWord)
 
+	    var temp = guessWord2.join("")
+		var lives = temp.length
+
 	for(let i = 0;i<26;i++) // this for loop creates the button layout for the alphabet, thats why it only goes to 26 because their are 26 characers in the alphabet
 	    {
 	        var alpha = document.createElement('div')
@@ -64,8 +67,7 @@ function createletterboxes(word,hintphrase)
 			            else
 			            {
 			            	// var temp = guessWord4.length
-			            	var temp = guessWord2.join("")
-							var lives = temp.length
+			            	
 			            	lives -= 1	
 			            	GuessCounter(lives)
 			            }
