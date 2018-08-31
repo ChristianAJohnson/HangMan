@@ -1,6 +1,7 @@
 
 var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var guessText = document.createElement("div")
+var countText = document.createElement("div")
 // var wrapper = document.getElementsByClassName('wrapper')[0];
 var wrapper = document.createElement('div') // this creates a wrapper
 var A = document.getElementsByClassName("A")[0];
@@ -15,8 +16,6 @@ function createletterboxes(word,hintphrase)
 
 	word2 = word2.split(""); // splits up string into an array
 
-
-	
 	// var wrapper = document.getElementsByClassName('wrapper')[0]; // this creates a wrapper
 	wrapper.style.width = "90%";
 	wrapper.style.margin = '0 auto'
@@ -44,21 +43,31 @@ function createletterboxes(word,hintphrase)
 	        alpha.innerHTML = alphabet[i]
 	        wrapper.appendChild(alpha)
 	        var boxes = document.getElementsByClassName('a')
+
+
 	        boxes[i].addEventListener('click', function(event)
 	        {
 	            // console.log(event.target.innerHTML)
+
+
+
 		            for(i=0;i<word2.length;i++) // this checks to see if a letter on the button layout is pressed is any of the letters in the word you are trying to solve
 		            {	
-			            if(event.target.innerHTML == word2[i]) // if one of the 
+			            if(event.target.innerHTML == word2[i]) // if one of the keys you pressed equals one of the letters in the word
 			            {
 			            	
-			            	guessWord2.splice(i, 1, word2[i]); //replacing the * with the correct letter, but leaving all the other letters with *
+			            	guessWord2.splice(i, 1, word2[i]); // replacing the * with the correct letter, but leaving all the other letters with *
 			            	var guessWord4 = guessWord2.join("") // join guessword2, so that is goes from from an array into a string
 			            	createGuessWord(guessWord4)
+
 			            }
 			            else
 			            {
-
+			            	// var temp = guessWord4.length
+			            	var temp = guessWord2.join("")
+							var lives = temp.length
+			            	lives -= 1	
+			            	GuessCounter(lives)
 			            }
 			        }
 	        })
@@ -82,6 +91,25 @@ function createGuessWord(guessWord3)
 	guessText.innerHTML = guessWord3
 	wrapper.appendChild(guessText)
 }
+
+
+function GuessCounter(guessWord5)
+{
+	countText.style.width = "auto"
+	countText.style.border = "2px solid orange"
+	countText.className = "countText"
+	countText.innerHTML = "You have " + guessWord5 + " guesses left."
+	wrapper.appendChild(countText)
+}
+
+
+
+
+
+
+
+
+
 
 
 
